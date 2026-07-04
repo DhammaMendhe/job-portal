@@ -54,4 +54,4 @@ See `backend/.env.example` for required variables.
 Coming soon 🔧
 
 ## Author
-Your Name — [GitHub](https://github.com/yourusername)
+Dhammadip Santosh Mendhe — [GitHub](https://github.com/DhammaMendhe)
