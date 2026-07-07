@@ -5,12 +5,13 @@ import {
   createJob,
   deleteJob
 } from '../controllers/job.controller'
+import { protect, employerOnly } from '../middleware/auth.middleware'
 
 const router = Router()
 
-router.get('/',     getAllJobs)   // GET    /api/jobs
-router.get('/:id',  getJobById)  // GET    /api/jobs/:id
-router.post('/',    createJob)   // POST   /api/jobs
-router.delete('/:id', deleteJob) // DELETE /api/jobs/:id
+router.get('/',       getAllJobs)                      // public
+router.get('/:id',    getJobById)                     // public
+router.post('/',      protect, employerOnly, createJob)   // employers only
+router.delete('/:id', protect, employerOnly, deleteJob)   // employers only
 
 export default router

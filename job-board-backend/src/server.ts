@@ -3,17 +3,19 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import type { Request, Response } from 'express'
 import jobRoutes from './routes/job.routes'
+import authRoutes from './routes/auth.routes'
 
 dotenv.config()
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 const MONGO_URI = process.env.MONGO_URI || ''
 
 // Middleware
 app.use(express.json())
 
 // Routes
+app.use('/api/auth', authRoutes)
 app.use('/api/jobs', jobRoutes)
 
 // Health check
