@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import type { Request, Response } from 'express'
 import jobRoutes from './routes/job.routes'
 import authRoutes from './routes/auth.routes'
+import applicationRoutes from './routes/application.routes'
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.use(express.json())
 // Routes
 app.use('/api/auth', authRoutes)
 app.use('/api/jobs', jobRoutes)
+app.use('/api/applications', applicationRoutes)
 
 // Health check
 app.get('/', (req: Request, res: Response) => {

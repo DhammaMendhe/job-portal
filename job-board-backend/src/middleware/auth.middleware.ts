@@ -34,6 +34,8 @@ export const protect = (req: AuthRequest, res: Response, next: NextFunction): vo
 
 // Middleware to restrict to employers only
 export const employerOnly = (req: AuthRequest, res: Response, next: NextFunction): void => {
+  console.log('User role:', req.userRole) // add this to debug
+
   if (req.userRole !== 'employer') {
     res.status(403).json({ success: false, message: 'Only employers can do this' })
     return
