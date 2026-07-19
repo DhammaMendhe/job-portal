@@ -15,10 +15,7 @@ const MONGO_URI = process.env.MONGO_URI || ''
 
 // CORS — must be before routes
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://your-app.vercel.app'
-  ],
+  origin: 'http://localhost:5173',  // allow only your frontend
   credentials: true
 }))
 

@@ -7,7 +7,7 @@ import type { RootState } from '../redux/store'
 import type { Application } from '../types'
 
 function MyApplications() {
-  const { user }                          = useSelector((state: RootState) => state.auth)
+  const {  }                          = useSelector((state: RootState) => state.auth)
   const [applications, setApplications]   = useState<Application[]>([])
   const [isLoading,    setIsLoading]      = useState(true)
   const [error,        setError]          = useState('')
